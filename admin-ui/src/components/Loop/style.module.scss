@@ -1,0 +1,40 @@
+@use "../forward" as *;
+
+.title,
+.subTitle {
+  text-align: center;
+}
+
+.title {
+  font-family: ptsans-bold, sans-serif;
+  font-size: 4.1rem;
+}
+
+.subTitle {
+  font-size: $size-text--base;
+  color: $color-text--light;
+}
+
+.profiles {
+  overflow-x: hidden;
+}
+
+.carousel {
+  position: relative;
+}
+
+.more {
+  @include fill-widget;
+  display: block;
+  margin: 34px auto 0 auto;
+}
+
+.pre {
+  font-size: 1.6rem;
+}
+
+.loopItem {
+  display: flex;
+  position: absolute;
+  top: 0;
+}

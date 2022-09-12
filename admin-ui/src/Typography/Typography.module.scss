@@ -1,0 +1,10 @@
+@use "../scss" as *;
+
+.text {
+  font-size: $size-text--base;
+}
+
+.title {
+  font-size: $size-title;
+  font-family: ptsans-bold;
+}

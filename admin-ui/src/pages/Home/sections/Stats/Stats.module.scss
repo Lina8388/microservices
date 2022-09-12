@@ -1,0 +1,30 @@
+@use "../forward" as *;
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 69px 0;
+}
+
+.statsCard {
+  box-shadow: 0 3px 6px rgba(#000000, 0.16);
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 191px;
+  flex-basis: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.statsCard__title {
+  font-size: $size-text--title - 0.7;
+}
+
+.statsCard__count {
+  color: $color--base;
+  font-size: $size-text--base + 2;
+  margin: auto 0;
+
+}

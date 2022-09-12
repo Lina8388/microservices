@@ -1,0 +1,20 @@
+.mySwiper .swiper-slide-next {
+    height: 350px;
+}
+
+.mySwiper .swiper-slide-next > div {
+    transition: all 1s;
+    height: 350px;
+}
+
+.mySwiper .swiper-slide-next + div {
+    margin-top: 20px;
+}
+
+.mySwiper .swiper-slide-active, .mySwiper .swiper-slide-prev {
+    margin-top: 20px;
+}
+
+
+
+

@@ -1,0 +1,46 @@
+@use "../../forward" as *;
+
+$icon-names: ("place", "search");
+$icon-size: 24px;
+
+.input {
+  display: flex;
+  gap: $gutter-small;
+  align-items: center;
+  max-width: 272px;
+  min-height: 48px;
+  background-color: white;
+  padding: 0 12px;
+  border: 2px solid $color--base;
+  width: 100%;
+  box-sizing: border-box;
+
+  &_focus {
+    border: 2px solid $color--base;
+  }
+
+  &__field {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: $size-text--base;
+    width: 100%;
+    color: #3e3e3e;
+  }
+
+  &__icon {
+    min-width: $icon-size;
+    min-height: $icon-size;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    @each $icon in $icon-names {
+      &--#{$icon} {
+        background-image: url(../../../../../assets/img/#{$icon}.svg);
+      }
+    }
+  }
+}

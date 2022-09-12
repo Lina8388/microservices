@@ -1,0 +1,39 @@
+@use "../forward" as *;
+
+.slider {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider__carousel {
+  display: inline-flex;
+  transition-property: transform;
+  transition-duration: $transition-duration--long;
+}
+
+.slide {
+  transition-duration: $transition-duration--long;
+  transition-property: transform box-shadow;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.slide_active {
+  box-shadow: 0 -10px 0 $color--base;
+  &:hover {
+    cursor: default;
+  }
+}
+
+.slide:first-of-type.slide--active {
+  margin-left: 0;
+}
+
+.slide:last-of-type.slide--active {
+  margin-right: 0;
+}

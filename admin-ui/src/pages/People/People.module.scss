@@ -1,0 +1,81 @@
+@use "../../scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header {
+  @include text($size-text--title);
+
+  width: 100%;
+  text-align: center;
+  margin: 60px auto 60px;
+  text-align: center;
+}
+
+.resetBtn, .moreBtn {
+  font-size: 1rem;
+  color: white;
+  border: 1px solid $color--base;
+  background-color: $color--base;
+  cursor: pointer;
+}
+
+.filterWrapper {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+
+.filterWrapper:nth-last-child(1) {
+  margin-right: 0px;
+}
+
+.downArrow {
+  width: 10px;
+}
+
+.downArrow * {
+  fill: $color--base;
+}
+
+.resetBtn {
+  width: 180px;
+  height: 48px;
+}
+
+.peopleList {
+  display: grid;
+  grid-template-columns: repeat(3, 31%);
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+.sort {
+  @include text($size-text--base);
+
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+.allUsers {
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.moreBtn {
+  min-width: 180px;
+  margin: 0px auto;
+  font-size: $size-form-link;
+  padding: 20px 80px;
+}

@@ -1,0 +1,10 @@
+@use "../../scss/vars" as *;
+
+.signPage {
+  background-color: $sign-wall;
+  min-height: 100vh;
+
+  display: flex;
+  box-sizing: border-box;
+  padding: 2vh;
+}

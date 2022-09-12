@@ -1,0 +1,68 @@
+@use "../../scss" as *;
+
+.userCard {
+  @include text();
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  // height: 620px;
+  margin-bottom: 60px;
+  box-shadow: 6px 6px 5px #00000029;
+  border: 1px solid $color--base;
+  background-color: $organizator-card--bgcol;
+  padding: 20px;
+}
+
+.userImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+.name {
+  width: 100%;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.interests {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.interest {
+  background-color: $color--base;
+  color: white;
+  font-size: 12px;
+  padding: 6px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #3A9430;
+}
+
+.city, .age, .followers, .events {
+  width: 100%;
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.description {
+  height: 145px;
+  overflow: hidden;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+

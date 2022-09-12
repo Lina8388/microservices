@@ -1,0 +1,11 @@
+.chooseFileContainer {
+  width: 100%;
+  height: 100%;
+  h4 {
+    color: rgb(40, 124, 234);
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

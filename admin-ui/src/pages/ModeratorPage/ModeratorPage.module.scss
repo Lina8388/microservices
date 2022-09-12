@@ -1,0 +1,245 @@
+*{
+    font-family: pt-sans-regular, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    padding: 20px 50px;
+    justify-content: space-between;
+    box-shadow: 0px 3px 6px #00000029;
+    z-index: 2;
+    &__logo{
+        margin: 0;
+        font-size: 17px;
+    }
+    &__exit{
+        width: 80px;
+        height: 25px;
+        background: #4dc43f;
+        color: white;
+        border: none;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.section{
+    display: flex;
+}
+
+.moderator{
+    &__info{
+        background: #7D7D7D 0% 0% no-repeat padding-box;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #484747;
+        z-index: 1;
+        padding: 10px;
+    }
+    &__meta{
+        margin-top: 32px;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__avatar{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    &__name{
+        margin: 0;
+        color: #FCFCFC;
+        font-size: 1.5rem;
+        margin-top: 15px;
+        text-align: center;
+    }
+    &__status{
+        width: 80%;
+        height: 61px;
+        margin-bottom: 60px;
+        padding: 0 30px;
+        color: #ffffff;
+        font-size: 1.2rem;
+        background-color: #4B4B4B;
+    }
+    &__events{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: 495px;
+        overflow: auto;
+    }
+}
+
+.event{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 18px;
+    background: #ffffff;
+    margin-bottom: 25px;
+    box-shadow: 0px 3px 6px #00000029;
+    gap: 10px;
+    &_active{
+        background: #D8D8D8;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+    &__timer{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 19px;
+        &_left{
+            color: #858585;
+        }
+        &_right{
+            color: #F19B2C;
+        }
+    }
+    &__name{
+        margin: 0;
+        padding: 0;
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    &__author,
+    &__place{
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        color: #858585;
+    }
+    &__section{
+        width: 100%;
+        background: #ECECEC;
+        z-index: 1;
+        &_header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 34px;
+            box-shadow: 0px 3px 6px #00000029;
+            background: #ffffff;
+            text-align: center;
+        }
+        &_body{
+            display: flex;
+            padding: 16px 34px;
+            flex-direction: column;
+        }
+        &_img{
+            max-width: 50%;
+        }
+        &_meta{
+            display: flex;
+            gap: 45px;
+            align-items: center;
+            margin-bottom: 19px;
+        }
+        &_info{
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+            &_name{
+                font-size: 1.2rem;
+            }
+            &_meta{
+                font-size: 1.2rem;
+            }
+        }
+        &_description{
+            margin-bottom: 17px;
+            &_short{
+                margin-bottom: 22px;
+                &_textarea{
+                    width: 100%;
+                    height: 90px;
+                    padding: 18px 22px;
+                    font-size: 1.2rem;
+                    box-shadow: 0px 3px 6px #00000029;
+                    overflow: auto;
+                    resize: none;
+                    border: none;
+                }
+            }
+            &_large{
+                &_textarea{
+                    width: 100%;
+                    height: 225px;
+                    padding: 18px 22px;
+                    font-size: 1.2rem;
+                    box-shadow: 0px 3px 6px #00000029;
+                    overflow: auto;
+                    resize: none;
+                    border: none;
+                }
+            }
+            &_title{
+                font-size: 1.5rem;
+                margin-bottom: 13px;
+            }
+        }
+        &_buttons{
+            display: flex;
+            align-self: flex-end;
+            column-gap: 1rem;
+            &_deny{
+                width: 238px;
+                height: 48px;
+                font-size: 20px;
+                border: none;
+                color: white;
+                background: #DC494E;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            &_approve{
+                width: 238px;
+                height: 48px;
+                font-size: 20px;
+                border: none;
+                color: white;
+                background: #4DC43F;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &__author{
+        &_name{
+            margin: 0;
+            padding: 0;
+            font-size: 1.1rem;
+        }
+        &_age,
+        &_events_count,
+        &_sign_date{
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            color: #777777;
+        }
+        &_card{
+            text-decoration: underline;
+            color: #4DC43F;
+            font-size: 1rem;
+        }
+    }
+}

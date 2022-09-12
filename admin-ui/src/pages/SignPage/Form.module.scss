@@ -1,0 +1,235 @@
+@use "sass:map";
+@use "../../scss"as *;
+
+.wrapper {
+  background-color: $header--bgcol;
+  box-shadow: 8px 16px 32px rgba(black, 0.16);
+  max-width: 895px;
+  margin: auto;
+  height: 100%;
+  padding: 59px 92px;
+  box-sizing: border-box;
+
+  display: flex;
+  position: relative;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.form,
+.image {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $size-text--base;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: $size-text--base;
+  max-width: 328px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: $size-text--base * 2;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: $size-text--base * 2;
+}
+
+.title {
+  font-family: ptsans-bold;
+  font-size: 3.4rem;
+}
+
+.dontHasAccount {
+  display: flex;
+  gap: 22px;
+
+  font-family: ptsans-bold;
+  font-size: $size-text--base;
+
+  &_eyeCatching {
+    color: $color--base;
+  }
+}
+
+.input {
+  @include input;
+
+  background-color: $background-color-input;
+  font-family: ptsans-bold;
+  font-size: $size-text--base;
+  min-height: 48px;
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid transparent;
+  outline: none;
+}
+
+
+.rememberMe {
+  font-size: $size-text--base;
+  font-family: ptsans-bold;
+
+  display: flex;
+  gap: $size-text--base;
+  align-items: center;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.check,
+.pseudo {
+  height: $size-text--base * 2;
+  width: $size-text--base * 2;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.check {
+  appearance: none;
+  outline: none;
+  position: absolute;
+}
+
+.pseudo {
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  border: 1px solid $color--base;
+}
+
+.check:checked+.pseudo {
+  background-image: url(../../assets/img/check.svg);
+  background-color: $color--base;
+}
+
+.check:checked:focus+.pseudo {
+  background-image: url(../../assets/img/check.svg);
+  background-color: $color--base;
+  outline: 1px solid black;
+}
+
+.check:focus+.pseudo {
+  outline: 1px solid black;
+}
+
+.auth {
+  @include fill-widget;
+}
+
+.googleAccess {
+  font-family: ptsans-bold;
+  font-size: $size-text--base;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+
+  &:after,
+  &:before {
+    display: block;
+    content: "";
+    width: 60px;
+    height: 2px;
+    background-color: #cfcfcf;
+  }
+}
+
+.googleButton {
+  @include icon-button-fill(google);
+    &:hover{
+    cursor: pointer;
+  }
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-width: 380px;
+  height: 360px;
+
+  margin-top: 30px;
+
+  $images: ("fontg": (width: 277px,
+        height: 412px,
+      ),
+      "new": (width: 380px,
+        height: 360px,
+      ),
+    );
+
+  @each $imageName,
+  $size in $images {
+    &_#{$imageName} {
+      //background-image: url(../../assets/img/$imageName.svg);
+      min-width: map.get($size, width);
+      width: map.get($size, width);
+      min-height: map.get($size, height);
+      height: map.get($size, height);
+    }
+  }
+
+}
+
+.close {
+  @include icon-button-fill(close);
+  position: absolute;
+
+  $offset: $size-text--base * 2;
+
+  right: $offset;
+  top: $offset;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.rowHalf {
+  display: flex;
+  gap: $size-text--base;
+  justify-content: space-between;
+}
+
+.area {
+  border: 1px solid lightgrey;
+  resize: none;
+  min-height: 119px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+
+  padding: $size-text--base;
+  margin-top: $size-text--base;
+}
+
+.areaLabel {
+  margin-top: 23px;
+}

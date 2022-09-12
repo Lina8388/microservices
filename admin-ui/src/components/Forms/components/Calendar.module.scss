@@ -1,0 +1,11 @@
+@use '../../../scss/vars' as *;
+
+.title {
+  margin: 0;
+  color: $color-text--dark;
+  padding-left: 16px;
+}
+
+.datePicker {
+  border: none !important;
+}

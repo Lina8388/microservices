@@ -1,0 +1,102 @@
+@use "./vars"as *;
+
+// 26 23 16
+
+@mixin text($size: $size-text--base,
+  $family: pt-sans-regular,
+  $user-select: none,
+  $color: black) {
+  font-family: $family, sans-serif;
+  font-size: $size;
+  user-select: $user-select;
+  color: $color;
+}
+
+@mixin fill-widget($round: 1px) {
+  @include text($size-text--base, $color: white);
+  cursor: pointer;
+  background-color: $color--base;
+  border: none;
+  padding: 14px 30px;
+  border-radius: $round;
+
+  transition-property: background-color transform box-shadow;
+  transition-duration: $transition-duration--short;
+
+  &:hover {
+    background-color: darken($color--base, 10%);
+  }
+
+  &:disabled {
+    background-color: $color-text--light;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@mixin input($color: $active-color) {
+  color: $color;
+
+  &,
+  &::placeholder {
+    transition-property: color;
+    transition-duration: 0.15s;
+  }
+
+  &::placeholder {
+    color: lighten($color, 20%);
+  }
+
+  &:focus::placeholder {
+    color: black;
+  }
+
+  &:focus {
+    border: 1px solid $color--base;
+    outline: none;
+
+    @content;
+  }
+}
+
+@mixin icon-button($iconName,
+  $background-color: white,
+  $ext: "svg",
+  $shadow: false,
+  $size: $circle-icon--size,
+  $border: none) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  box-shadow: if($shadow, 0 8px 16px rgba(black, 0.08), null);
+  background-color: $background-color;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../assets/img/#{$iconName}.#{$ext});
+  border: $border;
+}
+
+@mixin icon-button-fill($iconName) {
+  @include icon-button($iconName, $color--base);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bg-image($width, $height, $iconName) {
+  background-image: url(../assets/img/#{$iconName}.svg);
+  background-size: cover;
+
+  width: $width;
+  height: $height;
+}
+
+@mixin size($inc) {
+  width: $inc;
+  height: $inc;
+}

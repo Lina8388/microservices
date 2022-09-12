@@ -1,0 +1,60 @@
+@use "../../forward" as *;
+@import "../../../pages/SignPage/Form.module";
+
+.cityWrapper {
+  font-size: $size-text--base;
+  font-weight: bold;
+  display: flex;
+  gap: $gutter-small;
+  font-family: ptsans-bold, sans-serif;
+  align-items: center;
+  position: relative;
+}
+
+.link {
+  color: black;
+  cursor: pointer;
+}
+
+.cityInput {
+  width: 60%;
+  @extend .input
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocompleteList {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-height: 0px;
+  position: absolute;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.autocompleteItem {
+  @extend .input;
+
+  width: 100%;
+  min-height: 10px;
+  max-height: 30px;
+  padding: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.autocompleteItem:hover {
+  background-color: $color--base;
+}
+

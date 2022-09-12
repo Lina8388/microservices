@@ -1,0 +1,45 @@
+@use "../../forward" as *;
+@import "src/pages/SignPage/Form.module";
+
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocompleteList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  gap: $gutter-small;
+  border: 2px solid $color--base;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: -2px;
+}
+
+.autocompleteItem {
+  @extend .input;
+
+  display: flex;
+  width: 100%;
+  min-height: 10px;
+  max-height: 30px;
+  padding: 5px 12px;
+  color: #3e3e3e;
+  font-size: $size-text--base;
+  background-color: white;
+}
+
+.autocompleteItem:hover {
+  background-color: $color--base;
+  color: white;
+  cursor: pointer;
+}

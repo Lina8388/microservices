@@ -1,0 +1,59 @@
+@use "../forward" as *;
+
+
+.filter {
+  position: relative;
+
+  &__btn {
+    width: 223px;
+    height: 48px;
+    font: inherit;
+    font-size: $size-text--base * 0.8;
+    outline: none;
+    border: 1px solid #4dc43f;
+    padding-left: 16px;
+    color: #4dc43f;
+    background: url("../../assets/img/arrowDown.svg") no-repeat center right;
+    cursor: pointer;
+  }
+
+  &__btn::placeholder {
+    color: #4dc43f;
+  }
+
+  &__btn_green {
+    color: white;
+    background: #4dc43f url("../../assets/img/arrowDown(white).svg") no-repeat center right;;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+
+
+}
+
+.list {
+  display: block;
+  position: absolute;
+  background: white;
+  width: 223px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-height: 120px;
+  overflow: hidden auto;
+  line-height: 30px;
+
+
+
+  &__item {
+    color: #4dc43f;
+  }
+
+  &__item:hover {
+    cursor: pointer;
+    background: #4dc43f;
+    color: white;
+  }
+}

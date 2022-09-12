@@ -1,0 +1,1 @@
+* Для работы Redux используется Redux ToolKit

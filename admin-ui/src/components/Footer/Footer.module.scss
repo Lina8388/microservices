@@ -1,0 +1,72 @@
+@use "../forward" as *;
+
+.wrapper {
+  background-color: #e5f9eb;
+
+  box-sizing: border-box;
+  padding: 50px;
+
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+
+  &Title {
+    font-size: $size-text--title;
+  }
+
+  &Text {
+    font-size: $size-text--base;
+    color: #a1a1a1;
+    max-width: 318px;
+    margin-top: 15px;
+  }
+}
+
+.iconsRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  $icons: ("facebook", "twitter", "linkedin", "youtube", "phone");
+
+  @each $icon in $icons {
+    &_#{$icon} {
+      @include icon-button($icon, $shadow: true);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.navSection {
+  display: flex;
+  flex-direction: column;
+  gap: $gutter-small;
+}
+
+.nav {
+  &Title {
+    font-family: ptsans-bold;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+  }
+
+  &Item {
+    font-size: $size-text--base;
+  }
+}

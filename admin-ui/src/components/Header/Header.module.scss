@@ -1,0 +1,42 @@
+@use '../../scss' as *;
+
+.header {
+  box-shadow: 0 3px 6px rgba(black, 0.16);
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $header--bgcol;
+}
+
+.inner {
+  padding-left: 50px;
+  padding-right: 422px;
+  display: flex;
+  flex-grow: 1;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: $size-text--base;
+  font-weight: bold;
+  display: flex;
+  gap: $gutter-small;
+  font-family: ptsans-bold, sans-serif;
+  // margin: 0 auto;
+  color: black;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.wrapper {
+  display: flex;
+}

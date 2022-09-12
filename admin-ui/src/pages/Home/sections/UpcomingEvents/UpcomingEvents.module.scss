@@ -1,0 +1,101 @@
+@use "../forward" as *;
+
+.upcomingEvents {
+
+}
+
+.eventCard {
+  background-image: url(../../../../assets/img/near-event.png);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 268px;
+  position: relative;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(#858282, 0.72);
+
+    display: block;
+    content: "";
+    z-index: 0;
+  }
+}
+
+.eventCard__tags {
+  display: flex;
+  gap: $gutter-small;
+  flex-wrap: wrap;
+}
+
+.eventCard__tag {
+
+  background-color: white;
+  padding: 3px 15px;
+  box-sizing: border-box;
+  color: $color--base;
+
+  font-size: 0.8rem;
+  font-family: ptsans-bold;
+}
+
+.eventCard__name,
+.eventCard__desc,
+.eventCard__dateTime,
+.eventCard__address {
+  color: white;
+}
+
+.eventCard__desc {
+  font-size: 1.2rem;
+}
+
+.eventCard__dateTime,
+.eventCard__address {
+  font-size: 0.9rem;
+}
+
+.eventCard__name {
+  font-size: 1.9rem;
+  font-family: ptsans-bold;
+}
+
+.eventCard__info {
+  display: flex;
+  flex-direction: column;
+  gap: $gutter-small;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.eventCard__tags,
+.eventCard__info {
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  display: block;
+  font-size: $size-text--title;
+  font-family: ptsans-bold;
+  text-align: center;
+}
+
+.upcomingEvents__otherEvents {
+  display: block;
+  @include fill-widget;
+  font-family: ptsans-bold;
+  font-size: $size-text--base;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+

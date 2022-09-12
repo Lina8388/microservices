@@ -1,0 +1,23 @@
+@use "../forward" as *;
+
+.whatDoWant {
+  display: flex;
+  justify-content: space-between;
+
+  &Search {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: $gutter-small;
+    max-width: 500px;
+
+    &__top {
+      display: flex;
+      gap: $gutter-small;
+    }
+  }
+}
+
+.whatDoWantSearch__btn {
+  @include fill-widget;
+}

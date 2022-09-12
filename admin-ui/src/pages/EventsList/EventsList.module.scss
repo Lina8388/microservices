@@ -1,0 +1,90 @@
+@use "../../scss" as *;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FBFBFB;
+}
+
+.eventsList {
+  padding-top: 62px;
+  font-family: ptsans-bold, sans-serif;
+
+  &__container {
+    display: grid;
+  }
+
+  &__title {
+    justify-self: center;
+    font-size: $size-text--title;
+    margin-bottom: 73px;
+  }
+
+  &__filter {
+    max-width: 80%;
+    position: relative;
+    display: grid;
+    grid-gap: 18px;
+    grid-template-columns: repeat(5, auto);
+    align-items: start;
+    justify-items: flex-start;
+    margin-bottom: 56px;
+
+  }
+
+  &__totalCount {
+    justify-self: end;
+    margin-bottom: 44px;
+    font-weight: bold;
+  }
+}
+
+.searchForm {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 127px;
+  grid-template-rows: 64px;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+
+  &__input {
+    color: #4dc43f;
+    justify-self: stretch;
+    font: inherit;
+    font-size: $size-text--base*1.4;
+    outline: none;
+    border: 1px solid #4dc43f;
+    padding-left: 77px;
+  }
+
+  &__input::placeholder {
+    font-size: $size-text--base * 1.3;
+  }
+
+  &__button {
+    border: none;
+    background: url("../../assets/img/loupe.svg") no-repeat center #4dc43f;
+  }
+}
+
+.filter__btn {
+  @include fill-widget;
+  max-width: 144px;
+}
+
+.eventList__cardContainer {
+  margin-bottom: 54px;
+  display: grid;
+  gap: 37px;
+  grid-template-columns: repeat(auto-fill, minmax(466px, 1fr));
+}
+
+.eventList__button {
+  @include fill-widget;
+  width: 457px;
+  height: 92px;
+  margin: auto;
+}

@@ -1,0 +1,307 @@
+@use "../../scss"as *;
+
+.personalArea {
+  margin-top: 120px;
+  font-family: 'SegoeUI', sans-serif;
+  h3 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .edit_btn {
+    display: flex;
+    justify-content: end;
+    .btnFill {
+      @include fill-widget;
+    }
+  }
+  .basicData {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 27px 44px 27px 44px;
+    box-shadow: 0px 3px 6px #00000029;
+    &_information {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 2rem;
+      h2 {
+        margin: auto;
+        margin-bottom: 15px;
+      }
+      span {
+        line-height: 40px;
+      }
+      &__name {
+        font-size: 4rem;
+        font-weight: 400;
+      }
+    }
+    &_data {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    }
+    &_avatar {
+      @include size(300px);
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        &:hover {
+          opacity: 0.5;
+          cursor: pointer;
+        }
+      }
+    }
+    &_subscribesAndEvents {
+      margin-top: -40px;
+      margin-left: 300px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+    &_subscribes {
+      display: flex;
+      align-items: center;
+      margin-right: 38px;
+      &__images {
+        margin-right: 10px;
+        img {
+          &:nth-child(1) {
+            margin-left: 0px;
+          }
+          @include size(40px);
+          border-radius: 50%;
+          margin-left: -20px;
+        }
+      }
+    }
+  }
+  .aboutUs {
+    &_block {
+      p {
+        margin: 0;
+      }
+      font-size: 1.5rem;
+      height: 100%;
+      padding: 20px 40px 20px 40px;
+      box-shadow: 0px 3px 6px #00000029;
+    }
+  }
+  .interests {
+    &_conteiner {
+      max-width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .interest {
+        margin-right: 40px;
+        margin-bottom: 20px;
+        font-size: $size-text--base;
+        color: $color--base;
+        box-shadow: 0px 3px 6px #00000029;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 40px 10px 40px;
+        font-weight: bold;
+      }
+    }
+  }
+  .myActivities {
+    &_conteiner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-items: start;
+      .card {
+        margin-bottom: 40px;
+        margin-right: 10px;
+      }
+    }
+    &_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .btnFill {
+        @include fill-widget;
+        padding: 30px 80px 30px 80px;
+      }
+    }
+  }
+}
+
+.modal {
+  font-family: 'SegoeUI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-color--modal;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+
+  .input {
+    @include input;
+    background-color: $background-color-input;
+    font-family: ptsans-bold;
+    font-size: $size-text--base;
+    min-height: 48px;
+    padding: 0 16px;
+    width: 100%;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    outline: none;
+  }
+
+  &_content.active {
+    transform: scale(1);
+  }
+
+  &_content {
+    position: absolute;
+    background-color: white;
+    padding: 30px 100px 30px 100px;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(0.7);
+    transition: 0.3s;
+    box-sizing: border-box;
+    h2 {
+      margin-bottom: 40px;
+    }
+    .form_input {
+      width: 100%;
+    }
+
+    .inputsWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      width: 70%;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    &__title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    &__name {
+      display: flex;
+      justify-content: space-between;
+
+      .form_input {
+        width: 48%;
+        display: flex;
+      }
+
+      .input {
+        width: 100%;
+      }
+    }
+
+    &__cityAndAge {
+      display: flex;
+      justify-content: space-between;
+
+      .input {
+        width: 100%;
+      }
+
+      .form_input {
+        width: 48%;
+        display: flex;
+      }
+    }
+
+    .btnFill {
+      @include fill-widget;
+    }
+
+    &__aboutUs {
+      width: 100%;
+
+      &__field {
+        textarea {
+          border: 2px solid #ededed;
+          outline: none;
+          padding: 10px 60px 60px 10px;
+          width: 100%;
+          height: 200px;
+          max-height: 500px;
+          resize: vertical;
+        }
+      }
+    }
+
+    &__btn {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      margin-top: 40px;
+
+      .btnFill {
+        width: 330px;
+      }
+    }
+  }
+
+  .close {
+    @include icon-button-fill(close);
+    position: absolute;
+
+    $offset: $size-text--base * 2;
+
+    right: $offset;
+    top: $offset;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.basicData_subscribes__images div {
+    position: relative;
+}
+
+.three {
+    z-index: 5;
+
+}
+
+.two {
+    z-index: 2; left: -10px;
+}
+
+.one {
+    z-index: 1;
+    left: -20px;
+}
